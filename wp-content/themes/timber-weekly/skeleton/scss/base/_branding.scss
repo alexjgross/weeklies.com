@@ -1,0 +1,59 @@
+// Branding Variables
+
+// Global Colors
+$newsprint-back: #c6c3be;
+$newsprint-body: #edeae6;
+
+@if     ( $publication == "AR") {
+  // Aroostook Republican
+
+  // Masthead
+
+  // Logo
+  $brand-logo: "logos/nw-trans.png";
+
+  // Colors
+  $brand:       #ea5c24;
+  $brand-dark:  #913916;
+  $brand-light: #e0d0c0;
+  $brand-comp:  #e5bc89;
+  $brand-accent: $dark-grey;
+
+  // Typography
+  $font-family-system: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+  $font-family-lead:   $font-family !default;
+  $font-family-copy:   $font-family !default;
+
+  $link-color:       $brand-dark;
+  $font-color-dark:  #222;
+  $font-color-light: #fff;
+}
+@else if( $publication == "FF" ) {}
+@else if( $publication == "HP" ) {}
+@else if( $publication == "PO" ) {}
+@else if( $publication == "SJ" ) {}
+@else if( $publication == "SH" ) {}
+@else {
+  // Northern Weekly Paper
+
+  // Masthead
+
+  // Logo
+  $brand-logo: "logos/nw.png";
+
+  // Brand Colors
+  $brand:        #999 !default;
+  $brand-dark:   #333 !default;
+  $brand-light:  #eee !default;
+  $brand-comp:   #ccc !default;
+  $brand-accent: $brand-dark !default;
+
+  // Typography
+  $font-family-system: $font-family !default;
+  $font-family-lead:   $font-family !default;
+  $font-family-copy:   $font-family !default;
+
+  $link-color:       #1eaedb !default;
+  $font-color-dark:  #222 !default;
+  $font-color-light: #fff !default;
+}

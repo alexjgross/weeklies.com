@@ -16,10 +16,12 @@ This theme utilizes a customization of the "Skeleton on Sass" boilerplate projec
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
 
+$publication: "AR" !default;
+
 /* Base files. */
 @import "skeleton/scss/base/normalize";
 @import "skeleton/scss/base/variables";
-@import "skeleton/scss/base/functions";
+@import "skeleton/scss/base/branding";
 @import "skeleton/scss/base/base-styles";
 @import "skeleton/scss/base/utils";
 @import "skeleton/scss/base/typography";
@@ -33,4 +35,6 @@ This theme utilizes a customization of the "Skeleton on Sass" boilerplate projec
 @import "skeleton/scss/modules/tables";
 @import "skeleton/scss/modules/spacing";
 @import "skeleton/scss/modules/media-queries";
+
+/* Theme Styles */
 
