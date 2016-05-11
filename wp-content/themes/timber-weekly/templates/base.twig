@@ -1,11 +1,21 @@
+{# Base Template: base.twig #}
+<!-- Begin HTML -->
+{% include 'html-start.twig' %}
+
+{# @block html_head_container Block to override <html> header content #}
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
+	<!-- Begin HTML head -->
+	{% include 'html-header.twig' %}
+
+	{# @block head Block to append template-specific stuff that needs to go in the <head> tag like custom meta tags #}
 	{% block head %}
+		<!-- No <head> tag injections defined for this page -->
 	{% endblock %}
 	</head>
+	<!-- End HTML Head -->
 {% endblock %}
-
+	<!-- Begin Page Body -->
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
@@ -41,4 +51,6 @@
 			{{ function('wp_footer') }}
 		{% endblock %}
 	</body>
+	<!-- End Page Body -->
 </html>
+<!-- End HTML -->

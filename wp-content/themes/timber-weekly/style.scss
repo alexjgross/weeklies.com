@@ -1,0 +1,36 @@
+/*
+Theme Name: Timber Weekly
+Author: Alexander Gross
+Author URI: http://bangordailynew.com
+Description: A theme for the weekly publications of the Bangor Publishing Company. The theme was based on the timber-starter-theme and uses the Timber PHP-Twig Library.
+Version: 1.0
+Text Domain: timber-weekly
+
+This theme utilizes a customization of the "Skeleton on Sass" boilerplate project:
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/9/2014
+* Sass Version by Seth Coelen https://github.com/whatsnewsaes
+*/
+
+/* Base files. */
+@import "skeleton/scss/base/normalize";
+@import "skeleton/scss/base/variables";
+@import "skeleton/scss/base/functions";
+@import "skeleton/scss/base/base-styles";
+@import "skeleton/scss/base/utils";
+@import "skeleton/scss/base/typography";
+
+/* Modules */
+@import "skeleton/scss/modules/grid";
+@import "skeleton/scss/modules/buttons";
+@import "skeleton/scss/modules/forms";
+@import "skeleton/scss/modules/lists";
+@import "skeleton/scss/modules/code";
+@import "skeleton/scss/modules/tables";
+@import "skeleton/scss/modules/spacing";
+@import "skeleton/scss/modules/media-queries";
+
