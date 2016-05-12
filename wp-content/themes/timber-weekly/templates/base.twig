@@ -15,22 +15,26 @@
 	</head>
 	<!-- End HTML Head -->
 {% endblock %}
+
 	<!-- Begin Page Body -->
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
+		<header class="header u-cf" >
 			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
+				<div id="masthead" class="wrapper container">
+						<div id="logo" class="wrapper">
+							<img src="/wp-content/themes/timber-weekly/logos/nw-trans.png" />
+						</div>
+						<h1 role="banner">{{site.name}}</h1>
+				</div>
+				<div id="nav-wrapper" class="wrapper">
+					<nav id="nav-main" class="nav-main container" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}
 		</header>
-
-		<section id="content" role="main" class="content-wrapper">
+		<!-- Begin Page Content -->
+		<section id="main-content" role="main" class="container">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
@@ -43,6 +47,7 @@
 				</aside>
 			{% endif %}
 		</section>
+		<!-- End Page Content -->
 
 		{% block footer %}
 			<footer id="footer">

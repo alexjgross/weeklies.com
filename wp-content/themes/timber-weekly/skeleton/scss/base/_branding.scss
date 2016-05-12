@@ -1,8 +1,31 @@
 // Branding Variables
+//--------------------------------
 
-// Global Colors
-$newsprint-back: #c6c3be;
-$newsprint-body: #edeae6;
+// Northern Weekly Paper Defaults
+
+// Masthead
+
+// Logo
+$brand-logo: "logos/nw.png";
+
+// Brand Colors
+$brand:        #999 !default;
+$brand-dark:   #333 !default;
+$brand-light:  #eee !default;
+$brand-comp:   #ccc !default;
+$brand-accent: $brand-dark !default;
+
+$newsprint-body:    #c6c3be !default;
+$newsprint-content: #edeae6 !default;
+
+// Typography
+$font-family-system: $font-family !default;
+$font-family-lead:   $font-family !default;
+$font-family-copy:   $font-family !default;
+
+$link-color:       #1eaedb !default;
+$font-color-dark:  #222 !default;
+$font-color-light: #fff !default;
 
 @if     ( $publication == "AR") {
   // Aroostook Republican
@@ -33,27 +56,4 @@ $newsprint-body: #edeae6;
 @else if( $publication == "PO" ) {}
 @else if( $publication == "SJ" ) {}
 @else if( $publication == "SH" ) {}
-@else {
-  // Northern Weekly Paper
-
-  // Masthead
-
-  // Logo
-  $brand-logo: "logos/nw.png";
-
-  // Brand Colors
-  $brand:        #999 !default;
-  $brand-dark:   #333 !default;
-  $brand-light:  #eee !default;
-  $brand-comp:   #ccc !default;
-  $brand-accent: $brand-dark !default;
-
-  // Typography
-  $font-family-system: $font-family !default;
-  $font-family-lead:   $font-family !default;
-  $font-family-copy:   $font-family !default;
-
-  $link-color:       #1eaedb !default;
-  $font-color-dark:  #222 !default;
-  $font-color-light: #fff !default;
-}
+@else {}
