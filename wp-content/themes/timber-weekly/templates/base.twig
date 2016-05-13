@@ -21,18 +21,41 @@
 		<header class="header u-cf" >
 			{% block header %}
 				<div id="masthead" class="wrapper container">
-						<div id="logo" class="wrapper">
-							<img src="/wp-content/themes/timber-weekly/logos/nw-trans.png" />
-						</div>
 						<h1 role="banner">{{site.name}}</h1>
 				</div>
 				<div id="nav-wrapper" class="wrapper">
-					<nav id="nav-main" class="nav-main container" role="navigation">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
+					<nav id="nav-main" class="nav-main" role="navigation">
+						<span id="logo" class="wrapper"></span>
+						<span class="masthead-text"></span>
+						{# {% include "menu.twig" with {'menu': menu.get_items} %} #}
+						<span id="m-button" class="icon fa fa-bars u-pull-right" title="Menu" aria-hidden="true"></span>
 					</nav><!-- #nav -->
+				</div>
+				<div id="nav-sub-wrapper" class="wrapper">
+					<div id="nav-sub" >
+						<span id="nav-sub-items">
+							<a>Obituaries</a>
+							<a>Classifieds</a>
+							<a>Gallery</a>
+							<a>Contact Us</a>
+						</span>
+						<span id="search-icon" class="icon-sm fa fa-search u-pull-right"></span>
+					</div>
+					<div id="search-wrapper" class="wrapper">
+						<div id="nav-search">
+							<input type="text" />
+						</div>
+					</div>
 				</div>
 			{% endblock %}
 		</header>
+
+		<!-- Begin Side Nav -->
+		<div id="content-overlay" class="content-mask m-target"></div>
+		<nav id="nav-side-header" class="nav-side m-target">Nav Menu</nav>
+		<nav id="nav-side-body" class="nav-side m-target">Nav Content</nav>
+		<!-- End Side Nav -->
+
 		<!-- Begin Page Content -->
 		<section id="main-content" role="main" class="container">
 			{% if title %}<h1>{{title}}</h1>{% endif %}

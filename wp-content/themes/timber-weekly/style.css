@@ -206,9 +206,9 @@ body {
   color: #222; }
 
 a {
-  color: #913916; }
+  color: #333; }
   a:hover {
-    color: #7b3013; }
+    color: #262626; }
 
 hr {
   margin-top: 3rem;
@@ -299,6 +299,7 @@ p {
 .container {
   position: relative;
   width: 100%;
+  min-width: 320px;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -510,24 +511,24 @@ input[type="submit"].button-primary, input[type="reset"].button-primary, input[t
 .button.button-primary:hover,
 button.button-primary:hover {
   color: #fff;
-  background-color: #913916;
-  border-color: #913916; }
+  background-color: #333;
+  border-color: #333; }
 
 input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover {
   color: #fff;
-  background-color: #913916;
-  border-color: #913916; }
+  background-color: #333;
+  border-color: #333; }
 
 .button.button-primary:focus,
 button.button-primary:focus {
   color: #fff;
-  background-color: #913916;
-  border-color: #913916; }
+  background-color: #333;
+  border-color: #333; }
 
 input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
   color: #fff;
-  background-color: #913916;
-  border-color: #913916; }
+  background-color: #333;
+  border-color: #333; }
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
   height: 38px;
   padding: 6px 10px;
@@ -662,44 +663,201 @@ form {
 body {
   background-color: #c6c3be; }
 
-/* Header Styles */
+hr {
+  border-top: 1px solid #333;
+  margin: 4.5px 0; }
+
+address {
+  font-style: normal; }
+
+/* Nav Header Styles */
 header {
   background-color: #edeae6;
   width: 100%;
-  height: 150px;
+  height: 50px;
   max-height: 150px; }
-
-#logo {
-  float: left;
-  margin-left: 1.5rem;
-  height: 150px;
-  max-height: 150px; }
-  #logo img {
-    background-color: #ea5c24;
-    width: 100%;
-    max-width: 150px;
-    min-width: 50px;
-    max-height: 150px;
-    min-height: 50px; }
 
 #masthead {
-  height: 100px; }
+  height: 100px;
+  display: none; }
 
+@media (min-width: 750px) {
+  #masthead {
+    display: block; } }
 #nav-wrapper {
-  background-color: #913916;
-  height: 50px; }
-  #nav-wrapper #nav-main {
-    max-height: 50px; }
+  background-color: #333;
+  color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
   #nav-wrapper a {
     color: #fff;
     text-decoration: none; }
   #nav-wrapper ul {
     margin: 0px;
-    list-style: none; }
+    list-style: none;
+    display: none; }
   #nav-wrapper li {
     margin: 0px; }
 
+.masthead-text {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold; }
+  .masthead-text:after {
+    content: "BPC Weekly Paper";
+    display: inline-block;
+    width: 220px;
+    line-height: 50px;
+    text-align: center; }
+
+#logo {
+  float: left;
+  margin-left: 0rem;
+  width: 50px;
+  height: 50px;
+  max-height: 150px;
+  background-image: url("/wp-content/themes/timber-weekly/logos/nw.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat; }
+
+#nav-main {
+  height: 50px;
+  text-align: center; }
+
+#nav-sub-wrapper {
+  width: 100%;
+  min-height: 30px;
+  overflow: hidden;
+  background-color: #eee;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+  #nav-sub-wrapper.is-active {
+    -webkit-transform: translateX(-290px);
+    -ms-transform: translateX(-290px);
+    transform: translateX(-290px); }
+  #nav-sub-wrapper span {
+    line-height: 30px;
+    vertical-align: middle;
+    font-weight: bold; }
+  #nav-sub-wrapper a {
+    margin: 0 4.5px; }
+
+#search-wrapper {
+  background-color: #e1e1e1;
+  height: 0px;
+  max-height: 30px;
+  visibility: hidden;
+  transition: height 300ms; }
+  #search-wrapper #nav-search {
+    text-align: center;
+    line-height: 30px; }
+  #search-wrapper input {
+    width: 260px;
+    max-height: 24px;
+    font-size: 1.2rem;
+    margin: 0px;
+    margin-top: -1px; }
+
+/* Side Nav */
+.content-mask {
+  position: fixed;
+  z-index: 100;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s; }
+  .content-mask.is-active {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+
+.nav-side {
+  position: fixed;
+  z-index: 200;
+  right: 0px;
+  width: 290px;
+  overflow-y: hidden;
+  background-color: #222;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%); }
+  .nav-side.is-active {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+
+#nav-side-header {
+  top: 50px;
+  height: 30px;
+  max-height: 30px;
+  font-weight: bold; }
+
+#nav-side-body {
+  top: 80px;
+  bottom: 0px; }
+
+@media (min-width: 750px) {
+  #nav-side-header,
+  .content-mask {
+    top: 150px; }
+
+  #nav-side-body {
+    top: 180px; } }
+/* Main Content Area */
 section#main-content {
   background-color: #edeae6; }
+
+/* Transitions */
+.search-down {
+  height: 30px !important;
+  visibility: visible !important; }
+
+/* Other Default Styles */
+.icon, .icon-sm {
+  line-height: 50px !important;
+  font-size: 32px !important;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 5px; }
+
+.icon-sm {
+  line-height: 30px !important;
+  font-size: 24px !important; }
+
+/* Side Bar */
+/* Footer */
+footer {
+  width: 100%;
+  background-color: #e1e1e1;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+  footer #mobile {
+    text-align: center; }
+  footer #options {
+    height: 40px;
+    line-height: 40px; }
+
+hr.footer {
+  border-top: 20px solid #999;
+  margin: 0px; }
 
 /*# sourceMappingURL=style.css.map */

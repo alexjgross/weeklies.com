@@ -4,9 +4,24 @@
 // Northern Weekly Paper Defaults
 
 // Masthead
+$brand-name: "BPC Weekly Paper" !default;
+
+@mixin text-masthead {
+  font-family: $font-family-masthead;
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  &:after {
+    content: $brand-name;
+    display: inline-block;
+    width: 220px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
 
 // Logo
-$brand-logo: "logos/nw.png";
+$brand-logo: "/wp-content/themes/timber-weekly/logos/nw.png" !default;
 
 // Brand Colors
 $brand:        #999 !default;
@@ -19,21 +34,34 @@ $newsprint-body:    #c6c3be !default;
 $newsprint-content: #edeae6 !default;
 
 // Typography
-$font-family-system: $font-family !default;
+$font-family-masthead: $font-family !default;
+$font-family-system: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-lead:   $font-family !default;
 $font-family-copy:   $font-family !default;
 
-$link-color:       #1eaedb !default;
+$link-color:       $brand-dark;
 $font-color-dark:  #222 !default;
 $font-color-light: #fff !default;
+
+@mixin text-light-on-dark {
+  color: $font-color-light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-menu {
+  font-family: $font-family-system;
+}
 
 @if     ( $publication == "AR") {
   // Aroostook Republican
 
   // Masthead
+  $brand-name: "Aroostook Republican";
 
   // Logo
-  $brand-logo: "logos/nw-trans.png";
+  $brand-logo: "/wp-content/themes/timber-weekly/logos/nw.png";
 
   // Colors
   $brand:       #ea5c24;
@@ -42,10 +70,14 @@ $font-color-light: #fff !default;
   $brand-comp:  #e5bc89;
   $brand-accent: $dark-grey;
 
+  // Fonts
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
   // Typography
-  $font-family-system: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-  $font-family-lead:   $font-family !default;
-  $font-family-copy:   $font-family !default;
+  $font-family-masthead: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  $font-family-system: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $font-family-lead:   $font-family;
+  $font-family-copy:   $font-family;
 
   $link-color:       $brand-dark;
   $font-color-dark:  #222;

@@ -16,7 +16,7 @@ This theme utilizes a customization of the "Skeleton on Sass" boilerplate projec
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
 
-$publication: "AR" !default;
+$publication: "" !default;
 
 /* Base files. */
 @import "skeleton/scss/base/normalize";
@@ -41,42 +41,37 @@ body {
   background-color: $newsprint-body;
 }
 
-/* Header Styles */
+hr {
+  border-top: 1px solid $dark-grey;
+  margin: 4.5px 0;
+}
 
+address {
+  font-style: normal;
+}
+
+/* Nav Header Styles */
 header {
   background-color: $newsprint-content;
   width: 100%;
-  height: 150px;
+  height: 50px;
   max-height: 150px;
-}
-
-#logo {
-  float: left;
-  margin-left: 1.5rem;
-  height: 150px;
-  max-height: 150px;
-
-  img{
-    background-color: $brand;
-    width: 100%;
-    max-width: 150px;
-    min-width: 50px;
-    max-height: 150px;
-    min-height: 50px;
-  }
 }
 
 #masthead {
   height: 100px;
+  display:none;
+}
+// Larger than tablet
+@media (#{$bp-larger-than-tablet}) {
+  #masthead {
+    display:block;
+  }
 }
 
 #nav-wrapper {
   background-color: $brand-dark;
-  height: 50px;
-
-  #nav-main {
-    max-height: 50px;
-  }
+  @include text-light-on-dark;
 
   a {
     color: $font-color-light;
@@ -86,6 +81,7 @@ header {
   ul {
     margin: 0px;
     list-style: none;
+    display: none;
   }
 
   li {
@@ -93,6 +89,199 @@ header {
   }
 }
 
+.masthead-text{
+  @include text-masthead;
+}
+
+#logo {
+  float: left;
+  margin-left: 0rem;
+  width: 50px;
+  height: 50px;
+  max-height: 150px;
+
+  background-image: url( $brand-logo );
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+
+#nav-main {
+  height: 50px;
+  text-align: center;
+}
+
+#nav-sub-wrapper {
+  width: 100%;
+  min-height: 30px;
+  overflow: hidden;
+
+  background-color: $brand-light;
+
+  @include text-menu;
+  font-size: 1.2rem;
+  color: $brand-dark;
+  text-align: center;
+
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+
+  &.is-active {
+    -webkit-transform: translateX(-290px);
+    -ms-transform: translateX(-290px);
+    transform: translateX(-290px);
+  }
+
+  span {
+    line-height: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+
+  a{
+    margin: 0 4.5px;
+  }
+}
+
+#search-wrapper {
+  background-color: $light-grey;
+  height: 0px;
+  max-height: 30px;
+  visibility: hidden;
+  transition: height 300ms;
+
+  #nav-search {
+    text-align: center;
+    line-height: 30px;
+  }
+  input {
+    width: 260px;
+    max-height: 24px;
+    font-size: 1.2rem;
+    margin: 0px;
+    margin-top: -1px;
+  }
+}
+
+/* Side Nav */
+.content-mask {
+  position: fixed;
+  z-index: 100;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+
+  &.is-active {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+}
+
+.nav-side {
+  position: fixed;
+  z-index: 200;
+  right: 0px;
+  width: 290px;
+  overflow-y: hidden;
+
+  background-color: #222;
+
+  @include text-menu;
+  @include text-light-on-dark;
+
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+
+  &.is-active {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+#nav-side-header {
+  top: 50px;
+  height: 30px;
+  max-height: 30px;
+
+  font-weight: bold;
+}
+#nav-side-body {
+  top: 80px;
+  bottom: 0px;
+}
+// Larger than tablet
+@media (#{$bp-larger-than-tablet}) {
+  #nav-side-header,
+  .content-mask
+  {
+    top: 150px;
+  }
+  #nav-side-body {
+    top: 180px;
+  }
+}
+
+
+/* Main Content Area */
 section#main-content {
   background-color: $newsprint-content;
+}
+
+
+/* Transitions */
+.search-down {
+  height: 30px !important;
+  visibility: visible !important;
+}
+
+/* Other Default Styles */
+.icon {
+  line-height: 50px !important;
+  font-size: 32px !important;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.icon-sm {
+  @extend .icon;
+  line-height: 30px !important;
+  font-size: 24px !important;
+}
+
+/* Side Bar */
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: $light-grey;
+
+  @include text-menu;
+  color: $font-color-dark;
+
+  #mobile {
+    text-align: center;
+  }
+
+  #options {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+hr.footer{
+  border-top: 20px solid $brand;
+  margin: 0px;
 }
