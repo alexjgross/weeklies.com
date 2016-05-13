@@ -25,10 +25,13 @@
 				</div>
 				<div id="nav-wrapper" class="wrapper">
 					<nav id="nav-main" class="nav-main" role="navigation">
-						<span id="logo" class="wrapper"></span>
-						<span class="masthead-text"></span>
+						<span id="logo"></span>
+						<span id="nav-masthead" class="masthead-text"></span>
 						{# {% include "menu.twig" with {'menu': menu.get_items} %} #}
-						<span id="m-button" class="icon fa fa-bars u-pull-right" title="Menu" aria-hidden="true"></span>
+						<span id="nav-button" class="wrapper u-pull-right">
+							<label id="nav-m-label" for="nav-m-button">Menu</label>
+							<span id="nav-m-button" class="icon fa fa-bars" title="Menu" aria-hidden="true"></span>
+						</span>
 					</nav><!-- #nav -->
 				</div>
 				<div id="nav-sub-wrapper" class="wrapper">
@@ -43,9 +46,12 @@
 					</div>
 					<div id="search-wrapper" class="wrapper">
 						<div id="nav-search">
-							<input type="text" />
+							<label for="search-box">Search: </label><input id="search-box" type="text" />
 						</div>
 					</div>
+				</div>
+				<div id="top-ad-wrapper" class="wrapper">
+					<div id="top-ad">top-ad</div>
 				</div>
 			{% endblock %}
 		</header>

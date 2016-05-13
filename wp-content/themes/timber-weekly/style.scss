@@ -50,6 +50,15 @@ address {
   font-style: normal;
 }
 
+label,
+.label {
+  display: inline-block;
+  margin-right: 4.5px;
+  margin-bottom: 0px;
+
+  font-weight: bold;
+}
+
 /* Nav Header Styles */
 header {
   background-color: $newsprint-content;
@@ -106,14 +115,64 @@ header {
 }
 
 #nav-main {
+  position: fixed;
+  z-index: 500;
+  top: 0px;
+  left: 0px;
+  right:0px;
+
+  margin: 0 auto;
+
   height: 50px;
+
+  line-height: 50px;
   text-align: center;
+  vertical-align: middle;
+
+  background-color: $brand-dark;
 }
+@media (#{$bp-larger-than-phablet}) {
+  #nav-main {
+    position: relative;
+  }
+}
+
+#nav-button {
+  line-height: 50px !important;
+  padding: 0 0 0 4.5px;
+
+  #nav-m-label {
+    display: none;
+    visibility: hidden;
+  }
+  @media (#{$bp-larger-than-phablet}) {
+    #nav-m-label {
+      display: initial;
+      visibility: visible;
+    }
+  }
+}
+@media (#{$bp-larger-than-phablet}) {
+  #nav-button {
+
+    margin: 7.5px;
+    border: 1px solid $light-grey;
+    border-radius: 4.5px;
+
+    line-height: 32px !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;  }
+}
+
+/* Sub Nav Styles */
 
 #nav-sub-wrapper {
   width: 100%;
   min-height: 30px;
   overflow: hidden;
+
+  margin-top: 50px;
 
   background-color: $brand-light;
 
@@ -131,6 +190,7 @@ header {
     transform: translateX(-290px);
   }
 
+
   span {
     line-height: 30px;
     vertical-align: middle;
@@ -139,6 +199,11 @@ header {
 
   a{
     margin: 0 4.5px;
+  }
+}
+@media (#{$bp-larger-than-phablet}) {
+  #nav-sub-wrapper {
+    margin-top: 0px;
   }
 }
 
@@ -153,8 +218,9 @@ header {
     text-align: center;
     line-height: 30px;
   }
+
   input {
-    width: 260px;
+    width: 75%;
     max-height: 24px;
     font-size: 1.2rem;
     margin: 0px;
@@ -162,10 +228,38 @@ header {
   }
 }
 
+#top-ad-wrapper {
+
+}
+
+#top-ad {
+  position: fixed;
+  z-index: 300;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+
+  margin: 0 auto;
+
+  height: 50px;
+
+  background-color: #00A8EF;
+
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+@media (#{$bp-larger-than-phablet}) {
+  #top-ad {
+    position: relative;
+    width: 320px;
+  }
+}
+
 /* Side Nav */
 .content-mask {
   position: fixed;
-  z-index: 100;
+  z-index: 500;
   top: 50px;
   left: 0;
   overflow: hidden;
@@ -187,7 +281,7 @@ header {
 
 .nav-side {
   position: fixed;
-  z-index: 200;
+  z-index: 500;
   right: 0px;
   width: 290px;
   overflow-y: hidden;
@@ -248,7 +342,6 @@ section#main-content {
 
 /* Other Default Styles */
 .icon {
-  line-height: 50px !important;
   font-size: 32px !important;
   text-align: center;
   vertical-align: middle;
@@ -266,6 +359,8 @@ section#main-content {
 /* Footer */
 footer {
   width: 100%;
+  margin-bottom: 50px;
+
   background-color: $light-grey;
 
   @include text-menu;

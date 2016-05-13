@@ -11,7 +11,7 @@ jQuery( document ).ready( function( $ ) {
 
     // Toggle Search
     console.log("Initialize Side Menu");
-    var menuButton = document.getElementById('m-button');
+    var menuButton = document.getElementById('nav-button');
     var overlayButton = document.getElementById('content-overlay');
     //var buttons = [menuButton,overlayButton];
 
