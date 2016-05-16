@@ -10,6 +10,7 @@ $brand-name: "BPC Weekly Paper" !default;
   font-family: $font-family-masthead;
   font-size: 1.8rem;
   font-weight: bold;
+  font-variant: small-caps;
 
   &:after {
     content: $brand-name;

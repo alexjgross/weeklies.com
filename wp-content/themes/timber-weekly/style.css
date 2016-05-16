@@ -17,6 +17,7 @@ This theme utilizes a customization of the "Skeleton on Sass" boilerplate projec
 */
 /* Base files. */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -206,9 +207,9 @@ body {
   color: #222; }
 
 a {
-  color: #333; }
+  color: #913916; }
   a:hover {
-    color: #262626; }
+    color: #7b3013; }
 
 hr {
   margin-top: 3rem;
@@ -286,6 +287,15 @@ h6 {
 p {
   margin-top: 0; }
 
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/9/2014
+* Sass Version by Seth Coelen https://github.com/whatsnewsaes
+*/
 /* Modules */
 /*
 * Skeleton V2.0.4
@@ -321,7 +331,7 @@ p {
 
   .column,
   .columns {
-    margin-left: 4%; }
+    margin-left: 0%; }
 
   .column:first-child,
   .columns:first-child {
@@ -329,106 +339,109 @@ p {
 
   .one.column,
   .one.columns {
-    width: grid-column-width(1); }
+    width: 8.33333%; }
 
   .two.columns {
-    width: grid-column-width(2); }
+    width: 16.66667%; }
 
   .three.columns {
-    width: grid-column-width(3); }
+    width: 25%; }
 
   .four.columns {
-    width: grid-column-width(4); }
+    width: 33.33333%; }
 
   .five.columns {
-    width: grid-column-width(5); }
+    width: 41.66667%; }
 
   .six.columns {
-    width: grid-column-width(6); }
+    width: 50%; }
 
   .seven.columns {
-    width: grid-column-width(7); }
+    width: 58.33333%; }
 
   .eight.columns {
-    width: grid-column-width(8); }
+    width: 66.66667%; }
 
   .nine.columns {
-    width: grid-column-width(9); }
+    width: 75%; }
 
   .ten.columns {
-    width: grid-column-width(10); }
+    width: 83.33333%; }
 
   .eleven.columns {
-    width: grid-column-width(11); }
+    width: 91.66667%; }
 
   .twelve.columns {
     width: 100%;
     margin-left: 0; }
 
   .one-third.column {
-    width: grid-column-width(4); }
+    width: 33.33333%; }
 
   .two-thirds.column {
-    width: grid-column-width(8); }
+    width: 66.66667%; }
 
   .one-half.column {
-    width: grid-column-width(6); }
+    width: 50%; }
 
   .offset-by-one.column,
   .offset-by-one.columns {
-    margin-left: grid-offset-length(1); }
+    margin-left: 8.33333%; }
 
   .offset-by-two.column,
   .offset-by-two.columns {
-    margin-left: grid-offset-length(2); }
+    margin-left: 16.66667%; }
 
   .offset-by-three.column,
   .offset-by-three.columns {
-    margin-left: grid-offset-length(3); }
+    margin-left: 25%; }
 
   .offset-by-four.column,
   .offset-by-four.columns {
-    margin-left: grid-offset-length(4); }
+    margin-left: 33.33333%; }
 
   .offset-by-five.column,
   .offset-by-five.columns {
-    margin-left: grid-offset-length(5); }
+    margin-left: 41.66667%; }
 
   .offset-by-six.column,
   .offset-by-six.columns {
-    margin-left: grid-offset-length(6); }
+    margin-left: 50%; }
 
   .offset-by-seven.column,
   .offset-by-seven.columns {
-    margin-left: grid-offset-length(7); }
+    margin-left: 58.33333%; }
 
   .offset-by-eight.column,
   .offset-by-eight.columns {
-    margin-left: grid-offset-length(8); }
+    margin-left: 66.66667%; }
 
   .offset-by-nine.column,
   .offset-by-nine.columns {
-    margin-left: grid-offset-length(9); }
+    margin-left: 75%; }
 
   .offset-by-ten.column,
   .offset-by-ten.columns {
-    margin-left: grid-offset-length(10); }
+    margin-left: 83.33333%; }
 
   .offset-by-eleven.column,
   .offset-by-eleven.columns {
-    margin-left: grid-offset-length(11); }
+    margin-left: 91.66667%; }
 
   .offset-by-one-third.column,
   .offset-by-one-third.columns {
-    margin-left: grid-offset-length(4); }
+    margin-left: 33.33333%; }
 
   .offset-by-two-thirds.column,
   .offset-by-two-thirds.columns {
-    margin-left: grid-offset-length(8); }
+    margin-left: 66.66667%; }
 
   .offset-by-one-half.column,
-  .offset-by-one-half.column {
-    margin-left: grid-offset-length(6); } }
+  .offset-by-one-half.columns {
+    margin-left: 50%; } }
+@media (min-width: 1000px) {
+  .container {
+    width: 100%; } }
 .container:after,
 .row:after,
 .u-cf {
@@ -511,24 +524,24 @@ input[type="submit"].button-primary, input[type="reset"].button-primary, input[t
 .button.button-primary:hover,
 button.button-primary:hover {
   color: #fff;
-  background-color: #333;
-  border-color: #333; }
+  background-color: #913916;
+  border-color: #913916; }
 
 input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover {
   color: #fff;
-  background-color: #333;
-  border-color: #333; }
+  background-color: #913916;
+  border-color: #913916; }
 
 .button.button-primary:focus,
 button.button-primary:focus {
   color: #fff;
-  background-color: #333;
-  border-color: #333; }
+  background-color: #913916;
+  border-color: #913916; }
 
 input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
   color: #fff;
-  background-color: #333;
-  border-color: #333; }
+  background-color: #913916;
+  border-color: #913916; }
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
   height: 38px;
   padding: 6px 10px;
@@ -682,7 +695,9 @@ header {
   background-color: #edeae6;
   width: 100%;
   height: 50px;
-  max-height: 150px; }
+  max-height: 150px;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
 
 #masthead {
   height: 100px;
@@ -690,34 +705,60 @@ header {
 
 @media (min-width: 750px) {
   #masthead {
-    display: block; } }
+    display: block; }
+    #masthead h1 {
+      position: absolute;
+      bottom: 0.45rem;
+      margin-left: 170px;
+      margin-bottom: 0px;
+      font-size: 4rem; } }
 #nav-wrapper {
-  background-color: #333;
+  background-color: #913916;
   color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: bold; }
   #nav-wrapper a {
     color: #fff;
     text-decoration: none; }
   #nav-wrapper ul {
     margin: 0px;
-    list-style: none;
-    display: none; }
+    list-style: none; }
   #nav-wrapper li {
     margin: 0px; }
 
-.masthead-text {
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold; }
-  .masthead-text:after {
-    content: "BPC Weekly Paper";
-    display: inline-block;
-    width: 220px;
-    line-height: 50px;
-    text-align: center; }
+#nav-masthead {
+  display: inline-block; }
+  #nav-masthead.masthead-text {
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-variant: small-caps; }
+    #nav-masthead.masthead-text:after {
+      content: "Aroostook Republican";
+      display: inline-block;
+      width: 220px;
+      line-height: 50px;
+      text-align: center; }
 
+@media (min-width: 750px) {
+  #nav-masthead {
+    display: none; } }
+#nav-menu {
+  display: none; }
+  #nav-menu ul, #nav-menu li {
+    display: inline-block; }
+  #nav-menu ul:first-child {
+    margin-left: 0px; }
+  #nav-menu li {
+    margin-left: 9px; }
+
+@media (min-width: 750px) {
+  #nav-menu {
+    display: inline-block;
+    float: left;
+    margin-left: 10px; } }
 #logo {
   float: left;
   margin-left: 0rem;
@@ -728,6 +769,18 @@ header {
   background-size: 50px 50px;
   background-repeat: no-repeat; }
 
+@media (min-width: 750px) {
+  #logo {
+    position: relative;
+    bottom: 100px;
+    margin-bottom: -100px;
+    margin-left: 11%;
+    width: 150px;
+    height: 150px;
+    background-size: 150px 150px; } }
+@media (min-width: 1000px) {
+  #logo {
+    margin-left: 10px; } }
 #nav-main {
   position: fixed;
   z-index: 500;
@@ -735,11 +788,12 @@ header {
   left: 0px;
   right: 0px;
   margin: 0 auto;
+  max-width: 960px;
   height: 50px;
   line-height: 50px;
   text-align: center;
   vertical-align: middle;
-  background-color: #333; }
+  background-color: #913916; }
 
 @media (min-width: 550px) {
   #nav-main {
@@ -770,10 +824,10 @@ header {
   min-height: 30px;
   overflow: hidden;
   margin-top: 50px;
-  background-color: #eee;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #e0d0c0;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
-  color: #333;
+  color: #913916;
   text-align: center;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s; }
@@ -791,6 +845,10 @@ header {
 @media (min-width: 550px) {
   #nav-sub-wrapper {
     margin-top: 0px; } }
+#nav-sub {
+  max-width: 960px;
+  margin: 0 auto; }
+
 #search-wrapper {
   background-color: #e1e1e1;
   height: 0px;
@@ -807,23 +865,46 @@ header {
     margin: 0px;
     margin-top: -1px; }
 
-#top-ad {
-  position: fixed;
-  z-index: 300;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+.banner-ad-wrapper {
+  background-color: #c6c3be; }
+
+.banner-ad {
+  position: relative;
   margin: 0 auto;
   height: 50px;
+  max-width: 990px;
+  max-height: 90px;
   background-color: #00A8EF;
   line-height: 50px;
   text-align: center;
   vertical-align: middle; }
 
+#top-ad {
+  position: fixed;
+  z-index: 300;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; }
+
+#bottom-ad {
+  margin: 4.5px auto; }
+
 @media (min-width: 550px) {
-  #top-ad {
+  #top-ad,
+  #bottom {
     position: relative;
     width: 320px; } }
+@media (min-width: 750px) {
+  #top-ad,
+  #bottom-ad {
+    position: relative;
+    width: 728px;
+    height: 90px; } }
+@media (min-width: 1000px) {
+  #top-ad {
+    position: relative;
+    width: 960px;
+    height: 90px; } }
 /* Side Nav */
 .content-mask {
   position: fixed;
@@ -851,7 +932,7 @@ header {
   width: 290px;
   overflow-y: hidden;
   background-color: #222;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -909,7 +990,7 @@ footer {
   width: 100%;
   margin-bottom: 50px;
   background-color: #e1e1e1;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; }
   footer #mobile {
     text-align: center; }
@@ -918,7 +999,7 @@ footer {
     line-height: 40px; }
 
 hr.footer {
-  border-top: 20px solid #999;
+  border-top: 20px solid #ea5c24;
   margin: 0px; }
 
 /*# sourceMappingURL=style.css.map */

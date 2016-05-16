@@ -7,7 +7,6 @@
 * 12/9/2014
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
-
 .container {
   position: relative;
   width: 100%;
@@ -98,9 +97,14 @@
   .offset-by-two-thirds.columns { margin-left: grid-offset-length(8);  }
 
   .offset-by-one-half.column,
-  .offset-by-one-half.column   { margin-left: grid-offset-length(6);  }
+  .offset-by-one-half.columns   { margin-left: grid-offset-length(6);  }
 
 
+}
+@media (#{$bp-larger-than-desktop}) {
+  .container {
+    width: 100%;
+  }
 }
 
 // Clearing

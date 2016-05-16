@@ -21,13 +21,17 @@
 		<header class="header u-cf" >
 			{% block header %}
 				<div id="masthead" class="wrapper container">
-						<h1 role="banner">{{site.name}}</h1>
+						<h1 role="banner">Piscataquis Observer</h1>
 				</div>
 				<div id="nav-wrapper" class="wrapper">
 					<nav id="nav-main" class="nav-main" role="navigation">
 						<span id="logo"></span>
 						<span id="nav-masthead" class="masthead-text"></span>
-						{# {% include "menu.twig" with {'menu': menu.get_items} %} #}
+						{% block nav_menu %}
+						<span id="nav-menu">
+							{% include "menu.twig" with {'menu': menu.get_items} %}
+						</span>
+						{% endblock %}
 						<span id="nav-button" class="wrapper u-pull-right">
 							<label id="nav-m-label" for="nav-m-button">Menu</label>
 							<span id="nav-m-button" class="icon fa fa-bars" title="Menu" aria-hidden="true"></span>
@@ -50,8 +54,8 @@
 						</div>
 					</div>
 				</div>
-				<div id="top-ad-wrapper" class="wrapper">
-					<div id="top-ad">top-ad</div>
+				<div id="top-ad-wrapper" class="wrapper banner-ad-wrapper">
+					<div id="top-ad" class="banner-ad">top-ad</div>
 				</div>
 			{% endblock %}
 		</header>
@@ -59,22 +63,34 @@
 		<!-- Begin Side Nav -->
 		<div id="content-overlay" class="content-mask m-target"></div>
 		<nav id="nav-side-header" class="nav-side m-target">Nav Menu</nav>
-		<nav id="nav-side-body" class="nav-side m-target">Nav Content</nav>
+		<nav id="nav-side-body" class="nav-side m-target">
+			{% block nav_menu_side %}
+				{% include "menu.twig" with {'menu': menu.get_items} %}
+			{% endblock %}
+		</nav>
 		<!-- End Side Nav -->
 
 		<!-- Begin Page Content -->
 		<section id="main-content" role="main" class="container">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
+			{% block page_title %}
+				<!-- No default page title -->
+			{% endblock %}
+			<div class="wrapper row">
+				<!-- Begin Primary Content -->
+				<div class="area-primary two-thirds column">
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</div>
+				<!-- End Primary Content -->
+				<!-- Begin Sidebar -->
+				<aside class="area-sidebar one-third column {{sidebar_class}}">
+					{% block sidebar %}
+						Sorry, no sidebar
+					{% endblock %}
 				</aside>
-			{% endif %}
+				<!-- End Sidebar -->
+			</div><!-- End Wrapper Row -->
 		</section>
 		<!-- End Page Content -->
 
