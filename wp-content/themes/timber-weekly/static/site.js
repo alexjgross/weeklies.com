@@ -15,6 +15,7 @@ jQuery( document ).ready( function( $ ) {
     var overlayButton = document.getElementById('content-overlay');
     //var buttons = [menuButton,overlayButton];
 
+    // Toggle Mask
     /**
      * Select all Menu Targets by ClassName and convert the HTMLCollection to an Array
      * @var array menuTargets Array of Menu Target to activate onclick
@@ -22,16 +23,35 @@ jQuery( document ).ready( function( $ ) {
     var menuTargets = [].slice.call( document.getElementsByClassName('m-target') );
     [ menuButton, overlayButton ].forEach( function( button ) {
         button.addEventListener("click", function() {
-            menuTargets.forEach( function( target ) {
-                target.classList.toggle('is-active')
-            });
-            console.log("toggle: Side Menu");
 
+            /** Set menu target to "active" */
+            menuTargets.forEach( function( t ) {
+                var target = $(t);
+                var nav_bottom = $('#nav-main');
+
+
+                /** Set top positions */
+                if( t.id == "nav-side-body") {
+                    target.css('top', ( nav_bottom.offset().top + nav_bottom.height() + 30 - document.body.scrollTop) + "px");
+                }
+                else {
+                    target.css('top', ( nav_bottom.offset().top + nav_bottom.height() - document.body.scrollTop) + "px");
+                }
+
+                t.classList.toggle('is-active')
+
+
+            });
+
+
+            /** Enable or disable the scrolling */
             if( menuTargets[1].classList.contains('is-active') ) {
                 disableScroll()
             } else {
                 enableScroll();
             }
+
+            console.log("toggle: Side Menu");
         });
     });
 
