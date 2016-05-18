@@ -1,0 +1,93 @@
+// Styles for Layout: List: Simple type articles
+$size-lg: 100px;
+$size-md: 50px;
+$size-sm: 40px;
+
+$buff-lg: 4px;
+$buff-md: 2px;
+
+$line-base-lg: 2.0rem;
+
+article {
+  display: -webkit-flex;
+  display: flex;
+
+  box-sizing: border-box;
+
+  min-width: 320px;
+  padding: $buff-lg;
+}
+
+.basic {
+  .headline {
+    margin: 0px;
+    @include text-headline;
+    font-weight: bold;
+  }
+
+  .info {
+    display: -webkit-flex;
+    display: flex;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    position: relative;
+  }
+
+  .post-item {
+    display:block;
+  }
+
+  .tag {
+    float: right;
+    margin-right: 2*$buff-lg;
+    padding: 0px $buff-lg;
+    border-radius: $buff-md;
+    background-color: $brand;
+  }
+
+  .teaser {
+    width: 320px - $size-lg - 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  // Size settings for large basic
+  &.lg {
+    $in-size: $size-lg - (2*$buff-lg);
+
+    min-height: $size-lg;
+    height: $size-lg;
+
+    .img {
+      width:  $in-size;
+      height: $in-size;
+      margin-right: $buff-lg;
+    }
+
+    .headline {
+      line-height: $line-base-lg;
+      font-size: $line-base-lg * 0.8;
+    }
+
+    .meta,
+    .teaser,
+    .teaser>.tag {
+      line-height: $line-base-lg * 0.8;
+      font-size: $line-base-lg * 0.6;
+    }
+
+    .goto {
+      line-height: $in-size;
+    }
+  }
+
+  &.md {
+    $img-size: $size-md - (2*$buff-md);
+  }
+}
+

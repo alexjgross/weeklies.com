@@ -1,0 +1,7 @@
+{% extends 'layout.twig' %}
+
+{% block list %}
+    {% for post in posts %}
+        {% include "post-item.twig" with { 'options': { type:"basic", size:"lg" } } %}
+    {% endfor %}
+{% endblock %}

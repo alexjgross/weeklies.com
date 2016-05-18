@@ -34,6 +34,11 @@ $brand-accent: $brand-dark !default;
 $newsprint-body:    #c6c3be !default;
 $newsprint-content: #edeae6 !default;
 
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+//@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
+
 // Typography
 $font-family-masthead: $font-family !default;
 $font-family-system: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
@@ -55,6 +60,10 @@ $font-color-light: #fff !default;
   font-family: $font-family-system;
 }
 
+@mixin text-headline {
+  font-family: $font-family-lead;
+}
+
 @if     ( $publication == "AR") {
   // Aroostook Republican
 
@@ -72,13 +81,13 @@ $font-color-light: #fff !default;
   $brand-accent: $dark-grey;
 
   // Fonts
-  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 
   // Typography
   $font-family-masthead: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
   $font-family-system: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  $font-family-lead:   $font-family;
-  $font-family-copy:   $font-family;
+  $font-family-lead: 'Crimson Text', Garamond, serif;
+  $font-family-copy: $font-family;
 
   $link-color:       $brand-dark;
   $font-color-dark:  #222;

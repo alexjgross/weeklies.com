@@ -37,9 +37,21 @@ $publication: "AR" !default;
 @import "skeleton/scss/modules/spacing";
 @import "skeleton/scss/modules/media-queries";
 
+/* Responsive Content Groups */
+
+@import "styles/scss/lists";
+
 /* Theme Styles */
 body {
   background-color: $newsprint-body;
+}
+
+//Override 1/3, 2/3 grid until desktop
+.one-third.column     { width: grid-column-width(12);  }
+.two-thirds.column    { width: grid-column-width(12);  }
+@media (#{$bp-larger-than-desktop}) {
+  .one-third.column     { width: grid-column-width(4);  }
+  .two-thirds.column    { width: grid-column-width(8);  }
 }
 
 hr {
@@ -424,6 +436,7 @@ header {
 /* Main Content Area */
 section#main-content {
   background-color: $newsprint-content;
+  padding: 0px;
 }
 
 

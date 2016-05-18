@@ -1,16 +1,17 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
-{# Define Content in this block
+{# Define Content in this block #}
 {% block content %}
-	Content Place Holder
+	{% include 'layout-simple.twig' %}
 {% endblock %}
-#}
-{# Define Sidebar content in this block  #}
+
+
+{# Define Sidebar content in this block #}
 {% block sidebar %}
 	Sidebar Placeholder
 {% endblock %}
 
-{# Original Simple Post List #}
+{# Original Simple Post List
 {% block content %}
 	<h2>{{foo}}</h2>
 	<p>{{qux}}</p>
@@ -18,3 +19,4 @@
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 {% endblock %}
+#}
