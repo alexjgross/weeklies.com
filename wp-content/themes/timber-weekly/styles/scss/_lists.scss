@@ -22,7 +22,6 @@ article {
   .headline {
     margin: 0px;
     @include text-headline;
-    font-weight: bold;
   }
 
   .info {
@@ -54,6 +53,11 @@ article {
     text-overflow: ellipsis;
     position: absolute;
     bottom: 0px;
+  }
+  @media (#{$bp-larger-than-desktop}) {
+    .teaser {
+      width: 640px - $size-lg - 15px;
+    }
   }
 
   // Size settings for large basic

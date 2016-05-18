@@ -8,8 +8,8 @@ $brand-name: "BPC Weekly Paper" !default;
 
 @mixin text-masthead {
   font-family: $font-family-masthead;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: $font-size-tm;
+  font-weight: $font-weight !important;
   font-variant: small-caps;
 
   &:after {
@@ -36,15 +36,16 @@ $newsprint-content: #edeae6 !default;
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-//@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700);
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
+@import url(https://fonts.googleapis.com/css?family=Bevan);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
 
 // Typography
 $font-family-masthead: $font-family !default;
 $font-family-system: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-lead:   $font-family !default;
-$font-family-copy:   $font-family !default;
-
+$font-family-lead:   'Bevan', cursive, serif !default;
+$font-family-copy:   'Open Sans',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-weight: normal;
+$font-size-tm: 1.8rem;
 $link-color:       $brand-dark;
 $font-color-dark:  #222 !default;
 $font-color-light: #fff !default;
@@ -66,8 +67,6 @@ $font-color-light: #fff !default;
 
 @if     ( $publication == "AR") {
   // Aroostook Republican
-
-  // Masthead
   $brand-name: "Aroostook Republican";
 
   // Logo
@@ -84,14 +83,37 @@ $font-color-light: #fff !default;
 
 
   // Typography
-  $font-family-masthead: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+  $font-family-masthead: 'Abril Fatface', 'Bodoni MT', Didot, cursive, serif;
   $font-family-system: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  $font-family-lead: 'Crimson Text', Garamond, serif;
-  $font-family-copy: $font-family;
+  $font-family-lead: 'Bevan', cursive, serif !default;
+  $font-family-copy: 'Open Sans',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  $font-size-tm: 2.0rem;
 
   $link-color:       $brand-dark;
   $font-color-dark:  #222;
   $font-color-light: #fff;
+
+  // Dynamic Masthead
+  #masthead>h1 {
+    font-family: $font-family-masthead;
+    font-size: 2.9rem;
+    letter-spacing: 0px;
+    @media (#{$bp-larger-than-desktop}) {
+      font-size: 5.0rem;
+      letter-spacing: initial;
+    }
+    font-variant: small-caps;
+
+    &:after {
+      content: $brand-name;
+      display: inline-block;
+      width: 100%;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
 }
 @else if( $publication == "FF" ) {}
 @else if( $publication == "HP" ) {}
